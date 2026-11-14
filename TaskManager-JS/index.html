@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Daily Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- I used a library by someone else - Day.js for dates, through CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>My Daily Task Manager</h1>
+        <p id="today-date"></p>
+        <p id="motivation">Small steps every day - Kaizen</p>
+
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="What do you need to do today?">
+            <select id="priority-select">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button id="add-btn">Add Task</button>
+        </div>
+
+        <div class="filters">
+            <button onclick="filterTasks('all')">All</button>
+            <button onclick="filterTasks('active')">Active</button>
+            <button onclick="filterTasks('done')">Completed</button>
+            <button onclick="clearCompleted()">Clear Completed</button>
+        </div>
+
+        <ul id="task-list"></ul>
+        <p id="task-count"></p>
+        <p id="error-message"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
